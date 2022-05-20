@@ -29,7 +29,7 @@ def add_copyright():
             else:
                 path = os.path.join(root, f)
                 paths.append(path)
-    print(f'{len(paths)} files found')
+    print(f'Total number of files in directory and subdirectories: {len(paths)}')
 
     # Iterate through file paths, adding a copyright line to each file
     for p in paths:
