@@ -1,13 +1,13 @@
 Supported file types:
 
-*.java
-*.py
-*.md
-*.html
-*.txt
-*.rs
-*.sh
-*.ts
+* .java
+* .py
+* .md
+* .html
+* .txt
+* .rs
+* .sh
+* .ts
 
 To use:
 
