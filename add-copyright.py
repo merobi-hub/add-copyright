@@ -99,11 +99,6 @@ def add_copyright():
                     with open(p, 'a') as t:
                         line = f'\n# Copyright 2018-2022 contributors to the {project} project'
                         t.write(line)
-                    #     contents = t.readlines()
-                    #     contents.insert(0, '# Copyright 2018-2022 contributors to the {project} project\n\n')
-                    # with open(p, 'w') as t:
-                    #     contents = ''.join(contents)
-                    #     t.write(contents)
             elif file_type == 'ts':
                 if p[-2:] == 'ts':
                     with open(p, 'r') as t:
