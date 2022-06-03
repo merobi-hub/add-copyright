@@ -3,8 +3,9 @@ def add_copyright():
     import os
     import sys
 
-    project = str(sys.argv[1])
-    file_type = str(sys.argv[2])
+    timeframe = str(sys.argv[1])
+    project = str(sys.argv[2])
+    file_type = str(sys.argv[3])
     print(f'adding copyright lines to all .{file_type} files...')
 
     # Create an array of paths mirroring structure of current directory
@@ -44,7 +45,7 @@ def add_copyright():
                 if p[-4:] == 'java':
                     with open(p, 'r') as t:
                         contents = t.readlines()
-                        line = f'/* Copyright 2018-2022 contributors to the {project} project */\n\n'
+                        line = f'/* Copyright {timeframe} contributors to the {project} project */\n\n'
                         contents.insert(0, line)
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
@@ -53,7 +54,7 @@ def add_copyright():
                 if p[-2:] == 'py':
                     with open(p, 'r') as t:
                         contents = t.readlines()
-                        line = f'# Copyright 2018-2022 contributors to the {project} project\n\n'
+                        line = f'# Copyright {timeframe} contributors to the {project} project\n\n'
                         contents.insert(0, line)
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
@@ -62,7 +63,7 @@ def add_copyright():
                 if p[-2:] == 'md':
                     with open(p, 'r') as t:
                         contents = t.readlines()
-                        line = f'<!-- Copyright 2018-2022 contributors to the {project} project -->\n\n'
+                        line = f'<!-- Copyright {timeframe} contributors to the {project} project -->\n\n'
                         contents.insert(0, line)
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
@@ -71,7 +72,7 @@ def add_copyright():
                 if p[-2:] == 'html':
                     with open(p, 'r') as t:
                         contents = t.readlines()
-                        line = f'<!-- Copyright 2018-2022 contributors to the {project} project -->\n\n'
+                        line = f'<!-- Copyright {timeframe} contributors to the {project} project -->\n\n'
                         contents.insert(0, line)
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
@@ -80,7 +81,7 @@ def add_copyright():
                 if p[-3:] == 'txt':
                     with open(p, 'r') as t:
                         contents = t.readlines()
-                        line = f'Copyright 2018-2022 contributors to the {project} project\n\n'
+                        line = f'Copyright {timeframe} contributors to the {project} project\n\n'
                         contents.insert(0, line)
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
@@ -89,7 +90,7 @@ def add_copyright():
                 if p[-2:] == 'rs':
                     with open(p, 'r') as t:
                         contents = t.readlines()
-                        line = f'// Copyright 2018-2022 contributors to the {project} project\n\n'
+                        line = f'// Copyright {timeframe} contributors to the {project} project\n\n'
                         contents.insert(0, line)
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
@@ -97,13 +98,13 @@ def add_copyright():
             elif file_type == 'sh':
                 if p[-2:] == 'sh':
                     with open(p, 'a') as t:
-                        line = f'\n# Copyright 2018-2022 contributors to the {project} project'
+                        line = f'\n# Copyright {timeframe} contributors to the {project} project'
                         t.write(line)
             elif file_type == 'ts':
                 if p[-2:] == 'ts':
                     with open(p, 'r') as t:
                         contents = t.readlines()
-                        line = f'// Copyright 2018-2022 contributors to the {project} project\n\n'
+                        line = f'// Copyright {timeframe} contributors to the {project} project\n\n'
                         contents.insert(0, line)
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
