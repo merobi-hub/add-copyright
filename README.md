@@ -27,7 +27,7 @@ The above command will add a copyright attributing authorship to Marquez to all 
 
 `# Copyright 2018 contributors to the Marquez project`
 
-Date ranges rather than individual dates are also supported:
+Date ranges rather than individual dates are also supported.
 
 `python3 add-copyright.py 2018-2022 Marquez sh` 
 
