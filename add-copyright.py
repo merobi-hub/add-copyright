@@ -23,6 +23,7 @@ def add_copyright():
 
     # Iterate through file paths, adding a copyright line to each file having the specified type.
     ftype_count = 0
+    exec_flag = False
     for p in paths:
         if '.circleci' in p:
             continue
@@ -33,6 +34,7 @@ def add_copyright():
         else:        
             if file_type == 'java':
                 if p[-4:] == 'java':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
@@ -43,6 +45,7 @@ def add_copyright():
                         t.write(contents)
             elif file_type == 'py':
                 if p[-2:] == 'py':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
@@ -53,6 +56,7 @@ def add_copyright():
                         t.write(contents)
             elif file_type == 'md':
                 if p[-2:] == 'md':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
@@ -63,6 +67,7 @@ def add_copyright():
                         t.write(contents)
             elif file_type == 'html':
                 if p[-2:] == 'html':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
@@ -73,6 +78,7 @@ def add_copyright():
                         t.write(contents)
             elif file_type == 'txt':
                 if p[-3:] == 'txt':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
@@ -83,6 +89,7 @@ def add_copyright():
                         t.write(contents)
             elif file_type == 'rs':
                 if p[-2:] == 'rs':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
@@ -93,12 +100,14 @@ def add_copyright():
                         t.write(contents)
             elif file_type == 'sh':
                 if p[-2:] == 'sh':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'a') as t:
                         line = f'\n# Copyright {timeframe} contributors to the {project} project'
                         t.write(line)
             elif file_type == 'ts':
                 if p[-2:] == 'ts':
+                    exec_flag = True
                     ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
@@ -109,9 +118,12 @@ def add_copyright():
                         t.write(contents)
     
     print('Done!')
-    if ftype_count != 1:
-        print(f'Result: {ftype_count} files changed out of {f_total} total in directory.')
+    if exec_flag == True:
+        if ftype_count != 1:
+            print(f'Result: {ftype_count} files changed out of {f_total} total in directory.')
+        else:
+            print(f'Result: {ftype_count} file changed out of {f_total} total in directory.')
     else:
-        print(f'Result: {ftype_count} file changed out of {f_total} total in directory.')
+        print(f'No files changed out of {f_total} in directory.')
 
 add_copyright()
