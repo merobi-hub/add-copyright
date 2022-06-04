@@ -10,8 +10,7 @@ def add_copyright():
     file_type = str(sys.argv[3])
     print(f'Adding copyright lines to all .{file_type} files...')
 
-    # Create an array of paths mirroring structure of current directory
-    # while ignoring this script and problematic file types
+    # Create an array of paths mirroring structure of current directory while ignoring this script.
     paths = []
     for (root, dirs, files) in os.walk('.', topdown=True):
         for f in files:
@@ -22,7 +21,7 @@ def add_copyright():
                 paths.append(path)
     f_total = len(paths)
 
-    # Iterate through file paths, adding a copyright line to each file
+    # Iterate through file paths, adding a copyright line to each file having the specified type.
     ftype_count = 0
     for p in paths:
         if '.circleci' in p:
