@@ -34,7 +34,6 @@ def add_copyright():
         else:        
             if file_type == 'java':
                 if p[-4:] == 'java':
-                    ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
                         line = f'/* Copyright {timeframe} contributors to the {project} project */\n\n'
@@ -42,10 +41,10 @@ def add_copyright():
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
                         t.write(contents)
+                    ftype_count += 1
                     exec_flag = True
             elif file_type == 'py':
                 if p[-2:] == 'py':
-                    ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
                         line = f'# Copyright {timeframe} contributors to the {project} project\n\n'
@@ -53,10 +52,10 @@ def add_copyright():
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
                         t.write(contents)
+                    ftype_count += 1
                     exec_flag = True
             elif file_type == 'md':
                 if p[-2:] == 'md':
-                    ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
                         line = f'<!-- Copyright {timeframe} contributors to the {project} project -->\n\n'
@@ -64,10 +63,10 @@ def add_copyright():
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
                         t.write(contents)
+                    ftype_count += 1
                     exec_flag = True
             elif file_type == 'html':
                 if p[-2:] == 'html':
-                    ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
                         line = f'<!-- Copyright {timeframe} contributors to the {project} project -->\n\n'
@@ -75,10 +74,10 @@ def add_copyright():
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
                         t.write(contents)
+                    ftype_count += 1
                     exec_flag = True
             elif file_type == 'txt':
                 if p[-3:] == 'txt':
-                    ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
                         line = f'Copyright {timeframe} contributors to the {project} project\n\n'
@@ -86,10 +85,10 @@ def add_copyright():
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
                         t.write(contents)
+                    ftype_count += 1
                     exec_flag = True
             elif file_type == 'rs':
                 if p[-2:] == 'rs':
-                    ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
                         line = f'// Copyright {timeframe} contributors to the {project} project\n\n'
@@ -97,17 +96,17 @@ def add_copyright():
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
                         t.write(contents)
+                    ftype_count += 1
                     exec_flag = True
             elif file_type == 'sh':
                 if p[-2:] == 'sh':
-                    ftype_count += 1
                     with open(p, 'a') as t:
                         line = f'\n# Copyright {timeframe} contributors to the {project} project'
                         t.write(line)
+                    ftype_count += 1
                     exec_flag = True
             elif file_type == 'ts':
                 if p[-2:] == 'ts':
-                    ftype_count += 1
                     with open(p, 'r') as t:
                         contents = t.readlines()
                         line = f'// Copyright {timeframe} contributors to the {project} project\n\n'
@@ -115,6 +114,7 @@ def add_copyright():
                     with open(p, 'w') as t:
                         contents = ''.join(contents)
                         t.write(contents)
+                    ftype_count += 1
                     exec_flag = True
     
     print('Done!')
