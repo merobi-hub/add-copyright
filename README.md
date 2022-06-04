@@ -2,7 +2,7 @@
 
 # Add Copyright
 
-A script for adding a copyright line to all files in a project having a specified file type. This utility for open-source project authors supports eight different file types and, to minimize the potential for breakage, excludes a number of problematic file types.
+A script for adding a copyright line to all files in a project having a specified file type. This utility for open-source project authors supports eight different file types and, to minimize the potential for breakage, excludes a number of problematic file types. To ease the review process, the script is designed to change only one type of file at a time.
 
 ## Supported file types
 
