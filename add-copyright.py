@@ -17,18 +17,6 @@ def add_copyright():
         for f in files:
             if f == 'add-copyright.py':
                 continue
-            elif '.data' in f:
-                continue
-            elif '.png' in f:
-                continue
-            elif '.jar' in f:
-                continue
-            elif '.' not in f:
-                continue
-            elif '.pack' in f:
-                continue
-            elif '.idx' in f:
-                continue
             else:
                 path = os.path.join(root, f)
                 paths.append(path)
