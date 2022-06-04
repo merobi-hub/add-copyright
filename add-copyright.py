@@ -1,3 +1,5 @@
+# Copyright 2022 contributors to the add-copyright project
+
 def add_copyright():
 
     import os
