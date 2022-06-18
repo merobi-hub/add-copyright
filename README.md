@@ -34,3 +34,7 @@ Date ranges rather than individual dates are also supported.
 will result in:
 
 `# Copyright 2018-2022 contributors to the Marquez project`
+
+# License
+
+Creative Commons BY-SA 4.0
