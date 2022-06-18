@@ -35,6 +35,6 @@ will result in:
 
 `# Copyright 2018-2022 contributors to the Marquez project`
 
-# License
+## License
 
 Creative Commons BY-SA 4.0
